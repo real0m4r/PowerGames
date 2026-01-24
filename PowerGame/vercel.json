@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "PowerGame/wsgi.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "main/static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "PowerGame/wsgi.py"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.12",
+    "DEBUG": "False"
+  }
+}
