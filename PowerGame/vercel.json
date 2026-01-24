@@ -2,13 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.12",
-        "pythonVersion": "3.12"
-      }
+      "src": "PowerGame/wsgi.py",
+      "use": "@vercel/python@3.3.22"
     }
   ],
   "routes": [
@@ -21,12 +16,10 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.py?url=$1"
+      "dest": "PowerGame/wsgi.py"
     }
   ],
   "env": {
-    "PYTHON_VERSION": "3.12",
-    "DEBUG": "False",
-    "VERCEL": "1"
+    "PYTHON_VERSION": "3.12"
   }
 }
