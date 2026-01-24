@@ -1,5 +1,12 @@
 #!/bin/bash
 
+set -e
+
 echo "Building application..."
-python manage.py collectstatic --noinput
-python manage.py migrate
+echo "Collecting static files..."
+python manage.py collectstatic --noinput --clear
+
+echo "Running migrations..."
+python manage.py migrate --noinput
+
+echo "Build completed successfully!"
