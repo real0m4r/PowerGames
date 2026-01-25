@@ -28,7 +28,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     '*',
-    '.vercel.app',
+    '.netlify.app',
 ]
 
 
