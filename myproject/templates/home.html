@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">{{ title }}</h1>
+    <p class="lead text-muted">{{ message }}</p>
+</div>
+
+<!-- Features Section -->
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="fs-1 mb-3">✅</div>
+                <h5 class="card-title">Django Configured</h5>
+                <p class="card-text">Full Django setup with templates and static files</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="fs-1 mb-3">🚀</div>
+                <h5 class="card-title">Vercel Ready</h5>
+                <p class="card-text">Configured for seamless deployment on Vercel</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <div class="fs-1 mb-3">🎨</div>
+                <h5 class="card-title">Bootstrap Styled</h5>
+                <p class="card-text">Pre-built Bootstrap components and responsive design</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
