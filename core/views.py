@@ -1,4 +1,8 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'core/home.html')
+    context = {
+        'title': 'Welcome to PowerGames',
+        'message': 'Your Django application is running successfully!'
+    }
+    return render(request, 'core/home.html', context)
