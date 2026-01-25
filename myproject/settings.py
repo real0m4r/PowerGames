@@ -17,7 +17,10 @@ ALLOWED_HOSTS = [
     '.onrender.com',
     'powergames-16ge.onrender.com',
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://powergames-16ge.onrender.com',
+    'https://www.powergames-16ge.onrender.com',
+]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
