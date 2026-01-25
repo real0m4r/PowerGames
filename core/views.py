@@ -1,4 +1,5 @@
 from django.shortcuts import render
-
+from .models import Game
 def home(request):
-    return render(request, 'core/home.html' )
+    games = Game.objects.all()
+    return render(request, 'core/home.html', {'games': games})
