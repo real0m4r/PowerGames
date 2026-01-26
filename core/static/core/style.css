@@ -79,3 +79,8 @@ h6 {
     color: white;
     justify-content: center;
 }
+a.cta {
+    border-radius: 5px;
+    font-family: Monserrat, sans-serif;
+    font-weight: 600;
+}
