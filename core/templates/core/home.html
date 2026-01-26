@@ -26,6 +26,6 @@
     <a href="?page={{ page_obj.next_page_number }}">Next</a>
     <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
 {% endif %}
-<h6> Page Number: {{ page_obj.number }} </h6>
+<h6>{{ page_obj }}</h6>
 </div>       
 {% endblock %}

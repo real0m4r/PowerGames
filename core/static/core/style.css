@@ -68,3 +68,10 @@ nav {
 .navbar-brand {
     margin: 0;
 }
+a {
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
