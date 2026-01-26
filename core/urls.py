@@ -5,4 +5,6 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('games', views.game, name='game'),
+    path('search', views.search, name='search'),
 ]
