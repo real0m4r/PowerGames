@@ -7,4 +7,4 @@ def home(request):
     paginator = Paginator(games, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'core/home.html', {'games': games, 'page_obj': page_obj})
+    return render(request, 'core/home.html', {'games': page_obj.object_list, 'page_obj': page_obj})
