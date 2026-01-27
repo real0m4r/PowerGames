@@ -1,42 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html, body {
-    background-color: #1A253A !important;
-    font-family: 'Montserrat', 'sans-serif';
-    background-color: #1A253A !important;
-    color: white !important;
+    height: 100%;
     margin: 0;
-}
-a
-{
-    padding-right: 2px !important;
-}
-main {
-    flex: 1;
-    background-color: #1A253A !important;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
-input, input::placeholder, input::-webkit-input-placeholder {
-    background-color: #f8f9fa !important;
-    color: #333 !important;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 10rem);
+    margin-bottom: 20px;
+}
+
+.hero p.lead a.btn {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    padding: 10px 30px;
 }
 
 footer {
-    margin-top: auto;
-    background-color: #1A253A !important;
-    color: white !important;
-}
-
-iframe {
-    display: flex;
-    justify-items: legacy;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* pushes footer to bottom */
 }
 
 .nav-link {
     font-weight: 500;
     position: relative;
-    padding-right: 10px;
+    margin-right: 5px;
+    margin-bottom: 2px;
 }
 
 .nav-link:hover,
@@ -63,48 +83,62 @@ iframe {
     visibility: visible;
 }
 
+.navbar-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+.nav-center {
+    justify-self: center;
+}
+
 a {
     text-decoration: none;
     color: white;
 }
 
-h6 {
+p.lead, p.lead.text-muted {
     color: white;
-    justify-content: center;
 }
-a.cta {
-    border-radius: 5px;
-    font-family: 'Monserrat', 'sans-serif';
-    font-weight: 600;
+
+input, input::placeholder, input::-webkit-input-placeholder {
+    background-color: #f8f9fa;
+    color: #333;
 }
-h1 {
-    color: white !important;
+input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
+    background-color: #e2e6ea;
+    color: #000;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #80bdff;
+    outline: none;
+}
+.display-1 {
+    font-size: clamp(5rem, 15vw, 15rem);
+    line-height: 1.1;
+    font-weight: 900;
     text-align: center;
-    margin-top: 10px !important;
+    margin: 0 auto 20px auto;
+    max-width: 80%;  /* never go wider than 90% of viewport */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: 0.5s;
 }
-
-
-.pagination-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+.display-1:hover {
+    -webkit-text-stroke: 3px white;
+    color: transparent;
 }
-.navbar-grid {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
+.cover p {
+    font-size: xx-large;
+    transition: 0.5s;
 }
-
-.nav-center {
-  justify-self: center;
+.cover p:hover
+{
+    color: #ff0000;
 }
-#home {
-    color: white !important;
-}
-#all {
-    margin-top: 10px !important;
-}
-nav{
-    margin-bottom: 16px;
+@media (max-width: 768px) {
+    .cover p {
+        max-width: 100%;
+    }
 }

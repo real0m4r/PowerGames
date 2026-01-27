@@ -1,88 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-body {
-    font-family: 'Montserrat', 'sans-serif';
-    background-color: #1A253A;
+
+/* ===== Global Styles ===== */
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    color: white !important;
+    margin: 0;
+    height: 100%;
 }
 
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-attachment: fixed;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+    color: white;
+    padding-right: 2px !important;
 }
 
-main {
-    flex: 1;
+h1, h6 {
+    color: white !important;
+    text-align: center;
 }
 
-/* Footer */
-footer {
-    margin-top: auto;
+p.lead, p.lead.text-muted {
+    color: white !important;
 }
 
-/* Custom utilities */
-.shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-iframe {
-    display: flex;
-    justify-items: legacy;
+input, input::placeholder, input::-webkit-input-placeholder {
+    background-color: #f8f9fa !important;
+    color: #333 !important;
 }
 
-.navbar-toggler {
-    border: none;
-    font-size: 1.25rem;
-}
-.navbar-toggler:focus, .btn-close:focus{
-    box-shadow: none;
-    outline: none;
-}
-.nav-link{
+/* ===== Navbar Styles ===== */
+.nav-link {
     font-weight: 500;
-    padding-right: 2px;
+    position: relative;
+    padding-right: 10px;
 }
-.nav-link:hover, .nav-link.active{
+
+.nav-link:hover,
+.nav-link.active {
     color: orange;
-    cursor: pointer;
 }
-.nav-link:before {
+
+.nav-link::before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 0;
     height: 2px;
     background-color: orange;
     visibility: hidden;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
-.nav-link:hover::before, .nav-link.active::before {
+
+.nav-link:hover::before,
+.nav-link.active::before {
     width: 100%;
     visibility: visible;
 }
-nav {
-    margin-bottom: 10px;
-}
-.navbar-brand {
-    margin: 0;
-}
-a {
-    text-decoration: none;
-    color: white;
-    justify-content: center;
-    display: flex;
+
+.navbar-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
 }
-h6 {
-    color: white;
-    justify-content: center;
+
+.nav-center {
+    justify-self: center;
 }
-a.cta {
-    border-radius: 5px;
-    font-family: Monserrat, sans-serif;
-    font-weight: 600;
+
+nav {
+    margin-bottom: 600px;
 }
-h1 {
-    color: antiquewhite;
+video {
+    size: 100% 100%;
+    z-index: -1;
 }
