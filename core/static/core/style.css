@@ -115,16 +115,16 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
 }
 .display-1 {
     font-size: clamp(5rem, 15vw, 15rem);
-    line-height: 1.1;
+    line-height: 1.05;
     font-weight: 900;
     text-align: center;
     margin: 0 auto 20px auto;
-    max-width: 80%;  /* never go wider than 90% of viewport */
+    max-width: 90%;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
     word-wrap: break-word;
-    overflow-wrap: break-word;
     transition: 0.5s;
 }
+
 .display-1:hover {
     -webkit-text-stroke: 3px white;
     color: transparent;
@@ -140,5 +140,15 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
 @media (max-width: 768px) {
     .cover p {
         max-width: 100%;
+    }
+    .display-1 {
+        font-size: 3rem;   /* force smaller */
+        line-height: 1.1;
+        max-width: 95%;
+    }
+
+    .hero p.lead a.btn {
+        font-size: 1rem;
+        padding: 8px 20px;
     }
 }

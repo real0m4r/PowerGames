@@ -35,11 +35,7 @@
                 <a class="nav-link" href="{% url 'core:game' %}">All Games</a>
                 </li>
             </ul>
-
-            <form class="d-flex" method="POST" action="{% url 'core:search' %}">
-                {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search Games" name="searched">
-            </form>
+            {% block navbar_extra %}{% endblock %}
             </div>
         </div>
     </nav>

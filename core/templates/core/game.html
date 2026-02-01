@@ -1,8 +1,16 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block title %}PowerGames{% endblock %}
-
+{% block navbar_extra %}
+    <form class="d-flex" method="POST" action="{% url 'core:search' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search Games" name="searched">
+    </form>
+{% endblock navbar_extra %}
 {% block content %}
+<video autoplay muted loop playsinline webkit-playsinline class="bg-video">
+    <source src="{% static 'core/117241-710892433.mp4' %}" type="video/mp4">
+</video>
 <!-- Hero Section -->
 <div class="text-center mb-5">
     <h1 class="display-4 fw-bold text-primary me-auto">All Games</h1>
