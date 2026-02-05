@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}PowerGames{% endblock %}
+{% block navbar_extra %}
+    <form class="d-flex" method="POST" action="{% url 'core:search' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search Games" name="searched">
+    </form>
+{% endblock navbar_extra %}
+{% block content %}
+<video autoplay muted loop playsinline webkit-playsinline class="bg-video">
+    <source src="{% static 'core/bg.mp4' %}" type="video/mp4">
+</video>
+<!-- Hero Section -->
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary me-auto">All Games</h1>
+    <p style="color: white !important;" class="lead text-muted">For the best gaming experience, and the website not malfunctioning, please ensure the default redirect blocker is on!</p>
+</div>
+
+<!-- Games Grid - 3 per row -->
+<div class="row g-4">
+{% for game in games %}
+        <a href="{% url 'core:game' game.id %}" class="col-md-4 text-decoration-none text-dark">
+            <ul style="border: 1px solid black; border-radius: 5px; padding: 50px; width: 100%; background: #f8f9fa; text-align: center; list-style-type: none;">
+                <h4>{{ game.name }}</h4>
+            </ul>
+        </a>
+{% endfor %}
+<div class="pagination-container">
+{% if page_obj.has_previous %}
+    <a href="?page=1">&laquo First</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+{% endif %}
+</div>
+<h6 style="text-align: center; margin-top: 20px;">{{ page_obj }}</h6>
+</div>       
+{% endblock %}

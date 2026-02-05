@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block navbar_extra %}
+    <p class="me-auto text-center" style="margin: 0 !important;">If you are not logged in these won't work and wilshow an error.</p>
+{% endblock navbar_extra %}
+{% block content %}
+    <video autoplay muted loop playsinline webkit-playsinline class="bg-video">
+        <source src="{% static 'core/login.mp4' %}" type="video/mp4">
+    </video>
+    <h1 class="text-center" style="margin-bottom: 20px !important;">LOGIN</h1>
+    <form action="{% url 'core:login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group" style="margin-bottom: 20px !important;">
+            <input class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group" style="margin-bottom: 20px !important;">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary justify-content-center" type="submit" value="Login">
+    </form>
+    <h1 style="margin-top: 20px;" class="text-center">If you have already logged in, 
+        go to the home page. Otherwise, please log in or a error will show up.</h1>
+{% endblock content %}
