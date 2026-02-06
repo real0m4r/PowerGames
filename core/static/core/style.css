@@ -152,3 +152,18 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
         padding: 8px 20px;
     }
 }
+#blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    display: none;
+}
+#show-blackout {
+    width: 100%;
+    background-color: red;
+    color: white;
+}
