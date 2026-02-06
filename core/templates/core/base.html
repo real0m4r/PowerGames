@@ -59,12 +59,12 @@
 
 
     <!-- Main Content -->
-    <main class="container my-5">
+    <main class="{% block main_class %}container my-5{% endblock %}">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-4 mt-auto">
+    <footer class="bg-light text-center py-4 mt-auto" style="margin-top: 20px !important;">
         <div class="container">
             <p class="text-muted mb-0">&copy; 2026 PowerGames. All rights reserved.</p>
         </div>
