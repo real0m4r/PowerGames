@@ -5,26 +5,29 @@ from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-
 def login_view(request):
-    if request.method == 'POST':
-        password = request.POST['password']
-        username = request.POST['username']
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
         user = authenticate(request, username=username, password=password)
-        message = "login successful"
 
         if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse("core:home") + "?message=" + message)
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(reverse("core:home"))
+            else:
+                return render(request, "core/login.html", {
+                    "message": "This account is disabled."
+                })
         else:
             return render(request, "core/login.html", {
-                "message": "Invalid username and/or password."
+                "message": "Invalid username or password."
             })
-    else:
-        return render(request, 'core/login.html')
+
+    return render(request, "core/login.html")
 
 
-@login_required
 def home(request):
     return render(request, 'core/home.html')
 

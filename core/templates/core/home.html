@@ -12,10 +12,18 @@
         <h1 class="display-1"><b><strong>Power Games</strong></b></h1>
         <p class="cover" name="description"><strong>PowerGames is a platform for all your gaming needs. With a wide variety of games,
              PowerGames has something for everyone.</strong></p>
-        <p class="lead" style="color: white !important;">
-          <a href="{% url 'core:all_games' %}"
-           class="btn btn-lg btn-secondary"><strong>All Games</strong></a>
-        </p>
+        {% if user.is_autheticated %}
+          <p class="lead" style="color: white !important;">
+            <a href="{% url 'core:all_games' %}"
+            class="btn btn-lg btn-success"><strong>All Games</strong></a>
+          </p>
+        {% else %}
+          <p class="lead" style="color: white !important;">
+            <a href="{% url 'core:login' %}"
+            class="btn btn-lg btn-success"><strong>Login</strong></a>
+          </p>
+        {% endif %}
+
       </main>
 </div>
 {% endblock content %}

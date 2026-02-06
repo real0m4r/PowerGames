@@ -31,10 +31,23 @@
                 <li class="nav-item">
                 <a class="nav-link" href="{% url 'core:home' %}"><strong>Home</strong></a>              
                 </li>
+                
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                 <a class="nav-link" href="{% url 'core:all_games' %}">All Games</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'core:login' %}">Login</a>
+                </li>
+                {% endif %}
             </ul>
+            {% if user.is_authenticated%}
+                <button href="#" style="border: none; margin-right: 10px;">Logged in as: {{ user.username }}</button>
+                {% else %}
+                <button>You are not logged in</button>
+            {% endif %}
+
             {% block navbar_extra %}{% endblock %}
             </div>
         </div>
