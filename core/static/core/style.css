@@ -179,7 +179,7 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
 }
 #hide-blackout {
     position: relative;
-    width: auto;
+    width: fit-content;
     padding: 12px 24px;
     background-color: red;
     color: white;
@@ -188,4 +188,5 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
     cursor: pointer;
     z-index: 7001;
     display: none;
+    height: fit-content;
 }

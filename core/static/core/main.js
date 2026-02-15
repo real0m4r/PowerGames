@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     hideBtn.addEventListener('click', () => {
         blackout.style.display = 'none';
-        hideBtn.style.display = 'none';
+        hideBtn.style.display = 'block';
     });
 });
