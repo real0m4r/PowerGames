@@ -191,3 +191,9 @@ input:focus, input:focus::placeholder, input:focus::-webkit-input-placeholder {
     display: none;
     height: fit-content;
 }
+@media (max-width: 900px) {
+    button
+    {
+        margin-bottom : 4px;
+    }
+}
