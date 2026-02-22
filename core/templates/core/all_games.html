@@ -28,12 +28,12 @@
 {% endfor %}
 <div class="pagination-container">
 {% if page_obj.has_previous %}
-    <a href="?page=1">&laquo First</a>
-    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    <a href="?page=1">&laquo| First |</a>
+    <a href="?page={{ page_obj.previous_page_number }}"> Previous |</a>
 {% endif %}
 {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">Next</a>
-    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+    <a href="?page={{ page_obj.next_page_number }}">Next |</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}"> Last |&raquo; </a>
 {% endif %}
 </div>
 <h6 style="text-align: center; margin-top: 20px;">{{ page_obj }}</h6>

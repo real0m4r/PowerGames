@@ -47,7 +47,7 @@ def game(request, game_id):
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        all_games = Game.objects.filter(iframe__contains=searched)
+        all_games = Game.objects.filter(name__contains=searched)
         return render(request, 'core/search.html', {'searched':searched,
                                                     'all_games':all_games})
     else:
